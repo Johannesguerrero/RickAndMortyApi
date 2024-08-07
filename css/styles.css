@@ -1,0 +1,218 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+#space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0b0b2d, #1a1a3a);
+    z-index: -1;
+}
+
+#stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#portal {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #00ff00,
+        #33ff33,
+        #66ff66,
+        #99ff99,
+        #ccffcc,
+        #ffffff,
+        #ccffcc,
+        #99ff99,
+        #66ff66,
+        #33ff33,
+        #00ff00
+    );
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 10s linear infinite;
+    box-shadow: 0 0 50px #00ff00;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#character-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.character-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+}
+
+.character-card img {
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+.character-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.character-card p {
+    margin: 5px 0;
+    color: #333;
+}
+
+#space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0b0b2d, #1a1a3a);
+    z-index: -1;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+#stars {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    animation: moveBG 150s linear infinite;
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.3;
+}
+
+@keyframes moveBG {
+    0% {
+        transform: translateZ(0) rotate(0deg);
+    }
+    100% {
+        transform: translateZ(1000px) rotate(360deg);
+    }
+}
+
+#search-container {
+    margin-top: 20px;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+    max-width: 300px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00b0c8;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #008c9e;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pagination button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00b0c8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#page-info {
+    font-size: 16px;
+    color: white;
+}
